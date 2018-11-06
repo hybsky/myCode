@@ -27,4 +27,18 @@ class Penguin extends Animals {
     public Penguin(String myName, int myid) {
         super(myName, myid);
     }
+
+    @Override
+    public void eat() {
+        super.eat();
+        System.out.println("吃完洗手");
+    }
+
+    public void catchFood(){
+        //此处使用super和this都可以
+        // 因为已继承父类方法，可使用this指向自己，也可使用super指向父类
+        super.introduction();
+        this.introduction();
+        System.out.println("捕食");
+    }
 }
