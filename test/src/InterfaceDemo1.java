@@ -19,7 +19,7 @@ interface Rich{
 interface Beauty{
     public void beauty();
 }
-
+//接口与接口之间可以多继承的
 interface WRB extends White , Rich , Beauty{
 
 }
