@@ -6,22 +6,34 @@ public class NoNameDemo2 {
             public void onClick() {
                 System.out.println("onClick");
             }
-            @Override
-            public void onDbClick() {
-                System.out.println("onDbClick");
-            }
         });
         b.onClick();
         b.onDbClick();
+
+        new Button().addListener(new MouseAdapter() {
+            @Override
+            public void onClick() {
+                System.out.println("匿名对象单击");
+            }
+            @Override
+            public void onDbClick() {
+                System.out.println("双击匿名对象");
+            }
+        }).onClick().onDbClick();
+
     }
 }
 class Button{
     private MouseListener listener;
-    public void addListener(MouseListener listener){
+    public Button addListener(MouseListener listener){
         this.listener = listener;
+        //主函数中匿名对象.onClick(),对象返回的是void，没有返回值，
+        // 所以改成return this,返回按钮
+        return this;
     }
-    public void onClick(){
+    public Button onClick(){
         listener.onClick();
+        return this;
     }
     public void onDbClick(){
         listener.onDbClick();
@@ -35,6 +47,8 @@ interface MouseListener{
 }
 //为解决上述问题，引入适配器模式
 abstract class MouseAdapter implements MouseListener{
+    public void onDbClick(){
+    };
     public void pop(){
     };
 }
