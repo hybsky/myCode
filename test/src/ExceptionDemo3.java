@@ -25,6 +25,8 @@ class Person{
         return age;
     }
     //必须对AgeSmallException, AgeBigException进行捕获或者声明以便抛出，使用throws
+    //若AgeSmallException继承于RuntimeException,则不需要声明,即：
+    //public void setAgeException(int age) throws AgeBigException{}
     public void setAgeException(int age) throws AgeSmallException, AgeBigException{
         if (age < 0){
             throw new AgeSmallException("年龄过小");
@@ -41,6 +43,7 @@ class AgeSmallException extends Exception{
         super(msg);
     }
 }
+
 class AgeBigException extends Exception{
     public AgeBigException(){
     }
