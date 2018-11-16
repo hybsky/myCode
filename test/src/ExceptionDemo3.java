@@ -18,6 +18,7 @@ public class ExceptionDemo3 {
         System.out.println("OK");
     }
 }
+//自定义异常
 class Person{
     private int age;
     public int getAgeException(){
@@ -32,6 +33,7 @@ class Person{
         }
     }
 }
+//自定义异常
 class AgeSmallException extends Exception{
     public AgeSmallException(){
     }
