@@ -51,10 +51,10 @@ class Cosmetic{
     }
 }
 /*
-* 定义一个化妆品管理类（CosmeticManager）
-* （1）实现进货功能
-* （2）可以输出所有化妆品信息功能
-*/
+ * 定义一个化妆品管理类（CosmeticManager）
+ * （1）实现进货功能
+ * （2）可以输出所有化妆品信息功能
+ */
 class CosmeticManager{
     protected Cosmetic[] cs = new Cosmetic[5];
     protected int count = 0;
