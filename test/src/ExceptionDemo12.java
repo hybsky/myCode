@@ -9,7 +9,7 @@ public class ExceptionDemo12 {
             //arr = null;
             //System.out.println(arr.length);
             System.out.println("test");
-            //return c;
+            return c;
         }catch (NullPointerException e){
             System.out.println("空指针异常");
         }catch (ArithmeticException e){
